@@ -1,0 +1,101 @@
+.sidebar {
+    height: 200px;
+    width: 0;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    margin-top: 55px;
+    background-color: #008B8B;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px;
+    border-radius: 0px 0px 3px 0px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+.sidebar a.active{
+    font-weight: bold;
+    filter: none;
+    color: white;
+
+}
+
+.menu-show{
+    width: 200px;
+    box-shadow: 1px 1px 0px 1px black;
+
+    transition: 0.3s;
+}
+
+#main{
+    padding-left: 50px;
+    background:  url(../imgs/work.png) no-repeat 9px center;
+    background-size: 30px;
+    filter: invert(100%) sepia(55%) saturate(327%) hue-rotate(79deg) brightness(111%) contrast(95%);
+
+}
+#today{
+    padding-left: 50px;
+    background:  url(../imgs/calendar.png) no-repeat 9px center;
+    background-size: 30px;
+    filter: invert(100%) sepia(55%) saturate(327%) hue-rotate(79deg) brightness(111%) contrast(95%);
+
+}
+#upcoming{
+    padding-left: 50px;
+    background:  url(../imgs/watch.png) no-repeat 9px center;
+    background-size: 30px;
+    filter: invert(100%) sepia(55%) saturate(327%) hue-rotate(79deg) brightness(111%) contrast(95%);
+
+}
+#trash{
+    padding-left: 50px;
+    background:  url(../imgs/trash.png) no-repeat 9px center;
+    background-size: 30px;
+    filter: invert(100%) sepia(55%) saturate(327%) hue-rotate(79deg) brightness(111%) contrast(95%);
+
+}
+.bold{
+    font-weight: bold;
+    color: black;
+
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+
+.modal-main {
+    position:fixed;
+    background: white;
+    width: 80%;
+    height: auto;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+}
+
+.display-block {
+    display: block;
+}
+
+.display-none {
+    display: none;
+}

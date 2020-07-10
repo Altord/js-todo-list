@@ -4,16 +4,17 @@ body{
 }
 #top_bar {
     overflow: hidden;
-    background-color: darkcyan;
+    background-color: #008B8B;
     height: 55px;
-    padding-left: 36px;
-    padding-right: 36px;
+
     width: 100%;
-    box-shadow: 1px 1px 1px 1px black;
+    box-shadow: 1px 1px 0px 1px black;
 }
 .main_menu{
     display: flex;
     align-items: center;
+    padding-left: 36px;
+
 }
 #home_icon{
     height: 35px;
@@ -27,29 +28,81 @@ body{
         opacity: 0.7;
     }
 
-#search_icon{
-    height: 33px;
-    width: 33px;
-    padding: 6px 4px 5px 4px;
+
+
+
+
+
+
+/* Search bar */
+.main-search {
+    outline: none;
+}
+.main-search::-webkit-search-decoration,
+.main-search::-webkit-search-cancel-button {
+    display: none;
+}
+
+
+.main-search[type=text] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    font-family: inherit;
+    font-size: 100%;
     margin-left: 10px;
     margin-bottom: 10px;
     margin-top: 6px;
+    background: #dedede url(../imgs/search-icon.png) no-repeat 9px center;
+    border: solid 1px #ccc;
+    padding: 9px 10px 9px 32px;
+    width: 55px;
 
-    cursor: pointer;
-    filter: invert(100%) sepia(55%) saturate(327%) hue-rotate(79deg) brightness(111%) contrast(95%);
-    border-radius: 10px 10px 10px;
+    -webkit-border-radius: 10em;
+    -moz-border-radius: 10em;
+    border-radius: 10em;
 
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
 }
-    #search_icon:hover{
-        background-color: white;
-        filter: none;
-        transition: 0.3s ease-in;
-    }
-
-#search_bar  {
+.main-search[type=text]:focus {
     width: 130px;
-    display: inline-flex;
-    position: absolute;
-    margin-top: 12px;
+    background-color: #fff;
+    border-color: #66CC75;
+
+    -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+    -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+    box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+.main-search:-moz-placeholder {
+    color: #999;
+}
+.main-search::-webkit-.main-search-placeholder {
+    color: #999;
+}
+
+#search_bar .main-search[type=text] {
+    width: 15px;
+    padding-left: 10px;
+    color: transparent;
+    cursor: pointer;
+}
+#search_bar .main-search[type=text]:hover {
+    background-color: #fff;
+}
+#search_bar .main-search[type=text]:focus {
+    width: 400px;
+    padding-left: 32px;
+    color: #000;
+    background-color: #fff;
+    cursor: auto;
+}
+#search_bar .main-search:-moz-placeholder {
+    color: transparent;
+}
+#search_bar .main-search::-webkit-.main-search-placeholder {
+    color: transparent;
 }
 
