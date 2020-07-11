@@ -1,8 +1,8 @@
 
-import Header from "./js/header";
-import SideMenu from "./js/Side_Menu"
-import InnerContent, {CurrentDate} from "./js/Main_Content"
-import TodoList from "./js/Main_Content";
+import Header from "./js/menus/header";
+import SideMenu from "./js/menus/Side_Menu"
+import InnerContent, {CurrentDate} from "./js/TodoList"
+import TodoList from "./js/TodoList";
 import React from "react";
 import ReactDOM from "react-dom";
 import "./css/main.css";

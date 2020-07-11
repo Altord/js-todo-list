@@ -72,3 +72,9 @@ textarea{
     resize: none;
     font-size: 16px;
 }
+#submit{
+    margin-top: 20px;
+}
+#date-input{
+    width: 380px;
+}

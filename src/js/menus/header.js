@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import '../css/header.css';
-import '../css/side-menu.css'
+import '../../css/header.css';
+import '../../css/side-menu.css'
 import 'hamburgers/dist/hamburgers.css';
-import homeIco from "../imgs/browser.png";
+import homeIco from "../../imgs/browser.png";
 
 
 
