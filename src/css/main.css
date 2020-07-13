@@ -3,8 +3,8 @@ h1{
 }
 
 #container{
-    text-align:center;
-    max-width: 40%;
+    text-align: left;
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px;
@@ -37,12 +37,15 @@ h1{
 }
 .today{
     margin-left: 10px;
+
+
 }
 
 .new-add-button{
     cursor: pointer;
     background-color: transparent;
     border: none;
+
 
 }
     .new-add-button:hover{
@@ -78,3 +81,43 @@ textarea{
 #date-input{
     width: 380px;
 }
+
+.add-item{
+    font-size: 18px;
+    border: 2px solid;
+    min-width: 725px;
+    max-width: 725px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: block;
+    text-align: left;
+    border-radius: 4px;
+}
+
+#todo-title{
+    font-size: 20px;
+    font-weight: 200;
+    color: black;
+    margin: 3px;
+}
+#todo-desc{
+    font-size: 16px;
+    background-color: lightblue;
+    width: 90%;
+    border-radius: 3px;
+    padding: 8px;
+    margin: 10px auto 3px auto;
+}
+#todo-date{
+    font-size: 10px;
+    display: inline-flex;
+    color: grey;
+    margin-left: 10px;
+}
+#todo-tags{
+    font-size: 10px;
+    margin: 5px;
+
+}
+
+

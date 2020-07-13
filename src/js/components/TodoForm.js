@@ -2,22 +2,32 @@ import React, {Component} from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+
+
+
+
+
 export default class TodoForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: "",
-            desc: "",
-            startDate: new Date(),
-            tags: ""
-        };
-    }
+            itemInfo: {
+                title: "",
+                desc: "",
+                startDate: new Date(),
+                tags: ""
+            },
+            newItem: [],
+        }
+    };
 
     handleInputChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    }
+       this.setState({
+           [event.target.name]: event.target.value
+       })
+
+
+    };
 
     dateChange = (date) => this.setState({
         startDate: date
@@ -26,12 +36,19 @@ export default class TodoForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state.title, this.state.desc, this.state.startDate.toLocaleDateString(), this.state.tags)
-        this.setState({
-            title: "",
-            desc: "",
-            tags: "",
+        this.props.onSubmit({
+           title: this.state.title,
+            desc: this.state.desc,
+            date: this.state.startDate.toLocaleDateString(),
+            tags: this.state.tags,
+
         });
+        this.setState({
+            title: ' ',
+            desc: ' ',
+            startDate: new Date(),
+            tags: ' ',
+        })
     }
 
     render(){
