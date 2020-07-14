@@ -95,8 +95,8 @@ textarea{
 }
 
 #todo-title{
-    font-size: 20px;
-    font-weight: 200;
+    font-size: 18px;
+    font-weight: 600;
     color: black;
     margin: 3px;
 }
@@ -109,7 +109,8 @@ textarea{
     margin: 10px auto 3px auto;
 }
 #todo-date{
-    font-size: 10px;
+    font-size: 11px;
+    font-weight: 600;
     display: inline-flex;
     color: grey;
     margin-left: 10px;
@@ -117,7 +118,19 @@ textarea{
 #todo-tags{
     font-size: 10px;
     margin: 5px;
-
+    display: inline-flex
 }
 
 
+#remove{
+    border:none;
+    float: right;
+    background-color: white;
+    color: #008B8B;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+#remove:hover{
+    cursor: pointer;
+}

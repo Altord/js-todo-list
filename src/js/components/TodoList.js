@@ -22,12 +22,18 @@ class  TodoList extends Component {
     addTodo = todo => {
         this.setState({
             todoItems: [todo, ...this.state.todoItems]
-        });
+        },
+            () => window.localStorage.setItem('savedSet', JSON.stringify(this.state.todoItems))
+            );
     }
     removeTodo = todo =>{
-        this.setState({
+        let arr = this.state.todoItems;
+        arr.splice(index, 1);
 
-        })
+        this.setState({ lists: arr }, () => {
+            window.localStorage.setItem('savedList', JSON.stringify(this.state.todoItems));
+        });
+        todo.remove();
     }
 
     render() {
@@ -37,9 +43,9 @@ class  TodoList extends Component {
                     {this.state.todoItems.map(todo => (
                         <div className={"add-item"} key={todo.id}>
                             <div id={"todo-title"}>{todo.title}<div id={"todo-date"}>{todo.date}</div></div>
-                            <div id={"todo-desc"}>{todo.desc}</div>
+                            <div id={"todo-desc"}>{todo.desc}{todo.id}</div>
                             <div id={"todo-tags"}>{todo.tags}</div>
-                            <div></div>
+                            <button id ={'remove'} type={"button"} onClick = {this.removeTodo}>x</button>
                         </div>
                         )
                     )}

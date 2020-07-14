@@ -42,13 +42,16 @@ export default class TodoForm extends React.Component {
             date: this.state.startDate.toLocaleDateString(),
             tags: this.state.tags,
 
-        });
+        },
+            );
+
         this.setState({
             title: ' ',
             desc: ' ',
             startDate: new Date(),
             tags: ' ',
         })
+
     }
 
     render(){
