@@ -1,4 +1,4 @@
-# JS-Todo-List
+# TOP-JS-Todo-List
 
 Inspiration was taken from various online To-Do list programs, trying to make it as minimilistic as possible with plans for more customization in the future.
 <br>
