@@ -1,8 +1,12 @@
-import React,{ Component } from 'react';
+import React,{ useState } from 'react';
+import { nanoid } from "nanoid";
 import '../../css/main.css'
 import addIco from '../../imgs/plus.png'
+import edit from "../../imgs/edit.png"
+import trash from "../../imgs/minus.png"
 import Popup from 'reactjs-popup'
 import TodoForm from "./TodoForm";
+import TodoTask from "./TodoTask";
 
 function CurrentDate(){
     let today = new Date().toLocaleDateString()
@@ -12,49 +16,59 @@ function CurrentDate(){
 
 
 
+function TodoList(props) {
 
-class  TodoList extends Component {
-    state = {
-        todoItems: [],
+    const [tasks, setTasks] = useState(props.tasks);
 
-    };
+    const taskList = tasks.map(task => ( <TodoTask
+        id={task.id}
+        title={task.title}
+        desc={task.desc}
+        date={task.date}
+        completed={task.completed}
+        key={task.id}
+        deleteTask={deleteTask}
+        editTask={editTask}
+    />))
 
-    addTodo = todo => {
-        this.setState({
-            todoItems: [todo, ...this.state.todoItems]
-        },
-            () => window.localStorage.setItem('savedSet', JSON.stringify(this.state.todoItems))
-            );
+
+    function editTask(id,newTitle,newDesc, newDate){
+        const editedList = tasks.map(task=> {
+            if (id == task.id){
+                return{
+                    ...task,
+                    title: newTitle,
+                    desc: newDesc,
+                    date: newDate,
+                }
+            }
+            return task
+        })
+        setTasks(editedList)
     }
-    removeTodo = todo =>{
-        let arr = this.state.todoItems;
-        arr.splice(index, 1);
 
-        this.setState({ lists: arr }, () => {
-            window.localStorage.setItem('savedList', JSON.stringify(this.state.todoItems));
-        });
-        todo.remove();
+    function addTask(title,desc,date) {
+        const newTask = { id: "todo-" + nanoid(), title: title, desc: desc, date:date};
+        setTasks([...tasks, newTask]);
+
     }
 
-    render() {
+    function deleteTask(id){
+        const remainingTasks = tasks.filter(task => id !== task.id);
+        setTasks(remainingTasks);
+    }
+
+
         return (
             <div className="inner-content">
-                <div id={"tasks-div"}>
-                    {this.state.todoItems.map(todo => (
-                        <div className={"add-item"} key={todo.id}>
-                            <div id={"todo-title"}>{todo.title}<div id={"todo-date"}>{todo.date}</div></div>
-                            <div id={"todo-desc"}>{todo.desc}{todo.id}</div>
-                            <div id={"todo-tags"}>{todo.tags}</div>
-                            <button id ={'remove'} type={"button"} onClick = {this.removeTodo}>x</button>
-                        </div>
-                        )
-                    )}
+                <div className={"tasks-div"}>
+                    {taskList}
+
+
                 </div>
-                <div id={'form-div'}>
-                    <Popup
-                        trigger={<button className={"new-add-button"}><p><img className={"add-ico"} src={addIco}></img>Add
-                            new task</p></button>} modal>
-                        <TodoForm onSubmit={this.addTodo}/>
+                <div className={'form-div'}>
+                    <Popup contentStyle={{width: "500px"}} className={"modal-box"} trigger={<button className={"new-add-button"}><p><img className={"add-ico"} src={addIco}></img>Add new task</p></button>} modal>
+                        <TodoForm addTask={addTask} />
 
                     </Popup>
 
@@ -63,7 +77,6 @@ class  TodoList extends Component {
 
             </div>
         )
-    }
 
 }
 
