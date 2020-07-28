@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "Javascript Todo List",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
