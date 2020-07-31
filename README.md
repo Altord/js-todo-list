@@ -11,3 +11,5 @@ What it should be able to do/is planned to do is as follows:
 * Create minimal "Projects" for further organisation
 
 Future additions will be made in time. 
+
+Site hosted at: https://altord.github.io/js-todo-list/
